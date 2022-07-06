@@ -37,7 +37,7 @@ public class Operations {
 	       
 	        return head;
 
-	        }
+	  }
 
 
 	 // Print the data
