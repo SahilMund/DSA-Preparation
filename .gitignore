@@ -5,5 +5,5 @@ bin/
 .metadata
 .metadata/
 .metadata/*
-.java
-/.java
+
+*.java
