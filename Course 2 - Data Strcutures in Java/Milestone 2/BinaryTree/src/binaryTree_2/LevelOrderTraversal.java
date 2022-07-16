@@ -35,6 +35,7 @@ import java.util.*;
 import binaryTree_1.BinaryTreeNode;
 public class LevelOrderTraversal {
 
+	
 public static void printLevelWise(BinaryTreeNode<Integer> root) {
 
     if(root == null)
