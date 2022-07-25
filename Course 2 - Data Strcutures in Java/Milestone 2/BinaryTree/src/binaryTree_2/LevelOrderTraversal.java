@@ -43,6 +43,8 @@ public static void printLevelWise(BinaryTreeNode<Integer> root) {
 
     Queue<BinaryTreeNode<Integer>> queue = new LinkedList<BinaryTreeNode<Integer>>();
     queue.add(root);
+    
+   
 
     while(!queue.isEmpty()){
         BinaryTreeNode<Integer> front = queue.poll();
@@ -72,3 +74,7 @@ public static void printLevelWise(BinaryTreeNode<Integer> root) {
 }
 
 }
+
+
+
+
