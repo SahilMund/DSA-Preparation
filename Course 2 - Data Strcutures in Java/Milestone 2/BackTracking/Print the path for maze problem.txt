@@ -1,0 +1,68 @@
+
+public class Solution {
+
+    public static boolean ratInAMaze(int maze[][]){
+
+        int n = maze.length;
+
+        int[][] path = new int[n][n];
+
+        return ratInAMazeHelper(maze,0,0,path);
+    }
+
+    public static boolean ratInAMazeHelper(int maze[][],int i,int j,int path[][]){
+
+        int n = maze.length;
+
+        //Check if i,j cell is valid or not 
+        // If cell is blocked in maze (cell value=0)
+        //If cell is already part of the path
+        if(i < 0 || j < 0 || i >= n || j >= n || maze[i][j] == 0 || path[i][j] == 1){
+            return false;
+        }
+
+
+        //If all previous conditions fail, then the cell is a possible path
+        //Include the cell in current path
+        path[i][j] = 1;
+
+
+        // if reached destination, then return true;
+        if(i == n-1 && j == n-1){
+
+			for(r = 0;r<n;r++){
+			for(int c=0;c<n;c++) {
+				System.out.print(path[r][c] + "")
+			}
+			System.out.println();
+			}
+			return true;
+
+        }
+
+        // if not yet recahed destination, Explore further in all direction
+
+        // TOP
+        if(ratInAMazeHelper(maze,i-1,j,path))
+            return true;
+
+        // RIGHT
+        if(ratInAMazeHelper(maze,i,j+1,path))
+            return true;
+
+        // DOWN
+        if(ratInAMazeHelper(maze,i+1,j,path))
+            return true;
+
+        // LEFT
+        if(ratInAMazeHelper(maze,i,j-1,path))
+            return true;
+
+        //If none of the conditions are satisfied, then the path is not working out
+
+        return false;
+
+    }
+
+
+}
